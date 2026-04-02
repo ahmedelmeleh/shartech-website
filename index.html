@@ -53,8 +53,8 @@
     margin-top: 45px;
   }
   .logo-icon {
-    width: 230px;
-    height: 120px;
+    width: 260px;
+    height: 135px;
     object-fit: contain;
     object-position: bottom;
     display: block;
@@ -881,6 +881,245 @@
     letter-spacing: 3px;
     color: rgba(255,255,255,0.5);
   }
+
+  /* ───── MOBILE RESPONSIVE ───── */
+  @media (max-width: 768px) {
+
+    /* Prevent horizontal overflow */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      padding: 0 16px;
+      height: auto;
+      min-height: 60px;
+      flex-wrap: wrap;
+      gap: 8px;
+      position: relative;
+    }
+
+    .logo {
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .logo-icon {
+      width: 120px;
+      height: 62px;
+    }
+
+    .logo-name {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      padding: 8px 0 12px;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .nav-cta {
+      padding: 8px 14px;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100svh;
+      height: auto;
+      padding-top: 16px;
+      padding-bottom: 60px;
+    }
+
+    .hero-content {
+      padding: 60px 20px 20px 20px;
+      max-width: 100%;
+    }
+
+    .hero-lines {
+      left: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 10vw, 56px);
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      max-width: 100%;
+    }
+
+    .hero-btns {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+
+    /* ── Sections general padding ── */
+    #solutions,
+    #why,
+    #about,
+    #contact {
+      padding: 60px 20px;
+    }
+
+    /* ── Solutions header ── */
+    .solutions-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Solutions carousel (mobile) ── */
+    .solutions-grid {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 0;
+      width: 100%;
+      padding-bottom: 8px;
+    }
+    .solutions-grid::-webkit-scrollbar { display: none; }
+
+    .sol-circle,
+    .sol-circle:nth-child(2) {
+      width: 280px;
+      height: 280px;
+      min-width: 280px;
+      margin: 0;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+    .sol-circle:first-child { margin-left: calc(50vw - 140px); }
+    .sol-circle:last-child  { margin-right: calc(50vw - 140px); }
+
+    /* Dots */
+    .sol-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .sol-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .sol-dot.active { background: var(--blue-primary); }
+
+    .arcs-svg {
+      display: none;
+    }
+
+    /* ── Why layout ── */
+    .why-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* ── About layout ── */
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-visual {
+      height: 280px;
+    }
+
+    .about-stats {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-visual-badge {
+      bottom: -10px;
+      left: -10px;
+      padding: 16px 20px;
+    }
+
+    /* ── Contact layout ── */
+    .contact-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .contact-form {
+      padding: 28px 20px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 20px 24px;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .footer-bottom-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      padding: 40px 16px 20px 16px;
+    }
+
+    nav {
+      padding: 0 12px;
+    }
+
+    .nav-links {
+      gap: 8px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -972,6 +1211,13 @@
           <div class="sol-center-name">Shartech<br>Smart</div>
         </div>
       </div>
+    </div>
+
+    <!-- Mobile dots -->
+    <div class="sol-dots" id="sol-dots">
+      <div class="sol-dot active"></div>
+      <div class="sol-dot"></div>
+      <div class="sol-dot"></div>
     </div>
 
     <!-- Solutions details below circles -->
@@ -1200,6 +1446,36 @@
     <p>© 2026 Shartech. All rights reserved. Riyadh, Kingdom of Saudi Arabia.</p>
   </div>
 </footer>
+
+<script>
+  // Solutions carousel dots (mobile only)
+  (function() {
+    var grid = document.querySelector('.solutions-grid');
+    var dots = document.querySelectorAll('.sol-dot');
+    if (!grid || !dots.length) return;
+
+    grid.addEventListener('scroll', function() {
+      var circles = grid.querySelectorAll('.sol-circle');
+      var center = grid.scrollLeft + grid.clientWidth / 2;
+      var closest = 0;
+      var minDist = Infinity;
+      circles.forEach(function(c, i) {
+        var dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
+        if (dist < minDist) { minDist = dist; closest = i; }
+      });
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === closest); });
+    });
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        var circles = grid.querySelectorAll('.sol-circle');
+        if (circles[i]) {
+          grid.scrollTo({ left: circles[i].offsetLeft - grid.clientWidth / 2 + circles[i].offsetWidth / 2, behavior: 'smooth' });
+        }
+      });
+    });
+  })();
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
